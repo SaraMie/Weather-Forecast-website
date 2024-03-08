@@ -1,0 +1,488 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+nav {
+    
+    background-color: rgba(255, 255, 255, 0.288);
+    backdrop-filter: blur(10px);
+}
+
+nav .navbar-brand img{
+    transition: .5s;
+}
+
+nav .navbar-brand span:nth-child(1) {
+    font-family: 'swanky and moo moo';
+    font-size: 1rem;
+    font-weight: 300;
+    margin-left: 2.5rem;
+}
+nav .navbar-brand span:nth-child(2) {
+    font-family: 'Slackey';
+    font-size: 1rem;
+    margin-top: -1rem;
+}
+nav .navbar-brand span:nth-child(2) img {
+    transform: scale(0.8);
+    margin-top: -.5rem;
+}
+
+/* search bar with auto detect btn */
+
+nav .search-bar input[type='search'], nav .search-bar span#auto-detect,
+nav .search-bar span#auto-detect i, nav .search-bar input[type='search']::placeholder {
+    /*color: #ffffff88;*/
+    color: var(--dark-gray);
+    border: none;
+    font-family: 'kanit';
+    font-weight: 300;
+    transition: .5s;
+}
+
+nav .search-bar span#auto-detect:hover i {
+    transform: scale(1.2);
+    transition: .5s;
+}
+nav .search-bar input[type='search']:focus, nav .search-bar input[type='search']:hover{
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* preferences btn */
+nav #preferences-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.5rem;
+    transition: .5s;
+}
+nav #preferences-btn i {
+    /*color: #ffffff88;*/
+    color: var(--dark-gray);
+    font-family: 'kanit';
+    font-weight: 200;
+    font-size: 1rem;
+    transform: scale(1);
+    transition: .5s;
+}
+nav #preferences-btn:hover {
+    color: var(--dark-gray);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+nav #preferences-btn:hover i{
+    transform: scale(1.5);
+    transition: .5s;
+}
+
+#pref-modal {
+    color: var(--white);
+    font-family: kanit;
+    backdrop-filter: blur(5px);
+}
+#pref-modal .modal-body,#pref-modal .modal-header,#pref-modal .modal-footer {
+    border: none;
+}
+#pref-modal .modal-body h6,  #pref-modal .modal-body span{
+    font-weight: 200;
+}
+#pref-modal .modal-body h6 i {
+    transform: scale(1.5);
+}
+#pref-modal .modal-body span.selected {
+    font-weight: normal;
+}
+#pref-modal .modal-footer button:last-child:hover {
+    color: var(--white);
+    background-color: rgba(155, 187, 247, 0.459);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);
+    
+}
+nav #search-btn {
+    display: block;
+}
+/* main section */
+main #current-weather, main #hourly-forecast  {
+    font-family: 'josefin sans';
+    width: 60%;
+}
+@media (max-width: 768px) { /* screen width is 768px or less */
+    
+    .input-group{
+        display: none;
+        transition: .5s;
+    }
+}
+@media (min-width: 768px) { /* screen width is 768px or more */
+    nav #search-btn {
+        display: none;
+        transition: .5s;
+    }
+    
+}
+@media (min-width: 530px) {
+    main #current-weather .col:nth-child(1)::before {
+        content: '';
+        position: absolute;
+        width: .2px;
+        height: 80%;
+        background-color: var(--white);
+        opacity: 0.1;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+main #current-weather #clock{
+    font-size: 2rem;
+    font-weight: 300;
+}
+main #current-weather #city-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    
+}
+main #current-weather #w_descrp {
+    font-weight: 300;
+}
+main #weather-condition #day-temp {
+    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: scale(1.6);
+    width: 64px;
+    height: 64px;
+}
+main #weather-condition #temp-val {
+    font-size: 6rem;
+    margin-top: -1rem;
+}
+main #weather-condition #feels-like{
+    font-weight: 200;
+    margin-top: -1rem;
+}
+main #w_details .precipitation, main #w_details .wind-speed, main #w_details .humidity {
+    font-weight: 200;
+}
+main .val {
+    font-weight: 500;
+    color: var(--dark-blue);
+}
+main #will-it-rain, main #will-it-snow {
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2px 5px;
+    i {
+        color: var(--light_gray);
+    }
+}
+#will-it-rain.will-true i, #will-it-snow.will-true i{
+    color: rgb(42, 114, 223);
+}
+main #forecast-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0px;
+    transition: .5s;
+}
+main #hourly-forecast:hover {
+    padding-bottom: 10px;
+    transition: .5s;
+}
+main #forecast-wrapper::-webkit-scrollbar {
+    height: 0;
+    margin-top: 0.5rem;
+    transition: .5s;
+}
+main #forecast-wrapper:hover::-webkit-scrollbar {
+    height: 4px;
+    transition: .5s;
+}
+main #forecast-wrapper::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.288);
+    border-radius: 10px;
+    transition: .5s;
+}
+main #forecast-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    transition: .5s;
+}
+main #forecast-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.6);
+    transition: .5s;
+}
+main #forecast-wrapper::-webkit-scrollbar-track:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transition: .5s;
+}
+
+main #hourly-forecast .h-forecast-frame{
+    text-align: center;
+    mix-blend-mode: difference;
+    font-family: 'kanit';
+    font-weight: 300;
+    transition: .5s;
+}
+
+main #hourly-forecast .h-forecast-frame:nth-child(1) {
+    text-align: center;
+    mix-blend-mode: normal;
+    pointer-events: none;
+    
+    #hour {
+        color: var(--dark-blue);
+        font-weight: 800;
+    }
+    #h-temp-val {
+        font-weight: 600;
+    }
+}
+main #hourly-forecast .h-forecast-frame *{
+    user-select: none;
+    transition: .5s;
+}
+
+main #hourly-forecast .h-forecast-frame:hover
+{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    mix-blend-mode: normal;
+    font-weight: bolder;
+    #hour {
+        color: var(--dark-blue);
+        font-weight: 800;
+    }
+    #h-temp-val {
+        font-weight: 600;
+    }
+    transform: translateY(-1rem);
+    transition: .5s;
+    
+}
+
+main #hourly-forecast .h-forecast-frame #w-icon {
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+    height: 64px;
+    width: 64px;
+    transform: scale(0.6);
+}
+
+
+
+
+/* glass effect */
+.glass-container {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: none;
+    box-shadow: 
+        0 0 0 10px rgba(255, 255, 255, 0.164),
+        0 0 10px rgba(255, 255, 255, 0.164)
+    ;
+    
+}
+.glass-text {
+    
+    color: var(--dark-gray);
+    font-weight: 300;
+    
+}
+.glass-text:not(:where(#clock, #city_name)) {
+    font-family: Dosis;
+}
+.glass-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    
+    transition: .5s;
+    
+    color: var(--white);
+    
+}
+.glass-btn.selected {
+    color: var(--yellow);
+    background-color: rgba(247, 245, 155, 0.322);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);
+    pointer-events: none;
+}
+.selected i {
+    color: var(--yellow);
+}
+.glass-btn:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* navbar in night mode */
+nav.night-mode {
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.1);
+    
+}
+nav.night-mode a.navbar-brand {
+    color: var(--white);
+}
+nav.night-mode .search-bar {
+    padding: 5px 10px;
+}
+nav.night-mode .search-bar input[type='search']{
+    background-color: rgba(87, 87, 87, 0.2);
+    border: 2px solid rgba(255,255,255,.2);
+    
+}
+nav.night-mode .search-bar input[type='search']:hover, nav.night-mode .search-bar input[type='search']:focus {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+nav.night-mode .search-bar input[type='search']::placeholder{
+    color: var(--light_gray);
+    font-family: 'josefin sans';
+    font-size: 1rem;
+    font-weight: 200;
+}
+nav.night-mode .search-bar #auto-detect {
+    background-color: rgba(87, 87, 87, 0.2);
+
+    border: 2px solid rgba(255,255,255,.2);
+}
+
+/* main: night mode */
+
+.night-mode .glass-container {
+    border: 2px solid rgba(87,87,87,0.2);
+    background: rgba(0,0,0,0.4);
+    
+    box-shadow: 
+        0 0 0 10px rgba(0, 0, 0, 0.2),
+        0 0 0 10px rgba(0, 0, 0, 0.2)
+    ;
+}
+.night-mode .glass-text {
+    color: var(--light_gray);
+    font-weight: 400;
+}
+.night-mode .glass-btn {
+    border: 2px solid rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.4);
+    color: var(--white);
+}
+.night-mode .glass-btn.selected {
+    color: var(--yellow);
+    background-color: rgba(247, 245, 155, 0.322);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.26);
+    pointer-events: none;
+}
+.night-mode .glass-btn:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
+    
+}
+
+.night-mode .val {
+    font-weight: 500;
+    color: var(--white);
+}
+.night-mode #weather-condition #temp-val {
+    color: var(--white);
+}
+.night-mode #forecast-wrapper::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.288);
+    border-radius: 10px;
+    transition: .5s;
+}
+.night-mode #forecast-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: .5s;
+}
+.night-mode #forecast-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transition: .5s;
+}
+.night-mode #forecast-wrapper::-webkit-scrollbar-track:hover {
+    background: rgba(0, 0, 0, 0.288);
+    border-radius: 10px;
+    transition: .5s;
+}
+.night-mode #hourly-forecast .h-forecast-frame{
+    text-align: center;
+    mix-blend-mode: darken;
+    
+    font-weight: 400;
+    transition: .5s;
+}
+.night-mode #hourly-forecast .h-forecast-frame:nth-child(1) {
+    text-align: center;
+    mix-blend-mode: normal;
+    pointer-events: none;
+    #hour {
+        color: var(--white);
+        font-weight: 800;
+    }
+    #h-temp-val {
+        
+        font-weight: 400;
+    }
+}
+.night-mode #hourly-forecast .h-forecast-frame:hover
+{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    mix-blend-mode: normal;
+    font-weight: bolder;
+    #hour {
+        color: var(--white);
+        font-weight: 800;
+        letter-spacing: 2px;
+    }
+    #h-temp-val {
+        font-weight: 600;
+    }
+    
+    transform: translateY(-1rem);
+    transition: .5s;
+    
+}
+
+.night-mode #hourly-forecast .h-forecast-frame #w-icon {
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+    height: 64px;
+    width: 64px;
+    transform: scale(0.6);
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.1) ;
+    backdrop-filter: blur(5px);
+    color: var(--dark-gray);
+    font-weight: 500;
+    font-size: .6rem;
+    height: 5vh;
+}
+footer #git {
+    font-size: 1.3rem;
+    
+}
+footer.night-mode {
+    background-color: rgba(0, 0, 0, 0.1) ;
+    color: var(--white);
+    font-weight: 600;
+}

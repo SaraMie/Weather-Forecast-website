@@ -1,0 +1,103 @@
+{
+    "day": {
+      "clear":[
+        "blue-sky-with-puffy-white-clouds.jpg",
+        "clear-sky-0ke2itg1dzw1rcj0.jpg"
+      ],
+      "clouds": [
+        "colorful-cloud-sky-sunset.jpg",
+        "orange-black-clouds.jpg",
+        "pexels-eberhard-grossgasteiger-844297.jpg",
+        "pexels-pixabay-258149.jpg",
+        "pexels-pixabay-531756.jpg",
+        "white-cloud-blue-sky.jpg"
+      ],
+      
+      "mist": [
+        "chris-lawton-6tfO1M8_gas-unsplash.jpg",
+        "dave-hoefler-od287vQyufw-unsplash.jpg",
+        "marita-kavelashvili-ugnrXk1129g-unsplash.jpg",
+        "pexels-eberhard-grossgasteiger-4406662.jpg",
+        "rebecca-prest-F0rQieonv3c-unsplash.jpg"
+      ],
+      "overcast": [
+        "cloudy-sky-daylight-background.jpg",
+        "dark-stormy-clouds.jpg",
+        "pexels-alex-conchillos-3888585.jpg",
+        "pexels-eberhard-grossgasteiger-1074428.jpg"
+      ],
+      "rain": [
+        "freddie-marriage-mYOea-xnu-k-unsplash.jpg",
+        "kal-visuals-2B1FzVytQOc-unsplash.jpg",
+        "mike-kotsch-HNx4QLRgy2k-unsplash.jpg"
+      ],
+      "snow": [
+        "anastasiia-krutota-PzdbcN9LkY0-unsplash.jpg",
+        "chandler-cruttenden-w8hWTFpGtpY-unsplash.jpg",
+        "jonathan-knepper--lWKt2RKz50-unsplash.jpg",
+        "jonathan-knepper-9GMO0Sxyw_Y-unsplash.jpg",
+        "jonathan-knepper-FJu_dhnTqlE-unsplash.jpg",
+        "pexels-maria-orlova-4913507.jpg",
+        "pexels-mikhail-nilov-6530841(1).jpg",
+        "pexels-pixabay-66284.jpg",
+        "william-topa-tVm6pFQ0jho-unsplash.jpg"
+      ],
+      "thunder": [
+        "pexels-aro-yan-5942871.jpg"
+      ]
+    },
+    "night": {
+      "clear":[
+        "low-angle-shot-mesmerizing-starry-sky.jpg",
+        "night-clear-sky-at-alps-6f53weasubiksxfb.webp",
+        "pexels-ayush-bali-19623635.jpg",
+        "pexels-sohail-nawaz-19660820.jpg",
+        "pexels-tom-fisk-1716158.jpg"
+      ],
+      "clouds": [
+        "pexels-felipe-barboza-11922022.jpg",
+        "pexels-roberto-nickson-2885320.jpg"
+      ],
+      
+      "mist": [
+        "arthur-oleynik-GIdhi6KSoy8-unsplash.jpg",
+        "pexels-darya-greyowl-12304621.jpg",
+        "pexels-pixabay-531360.jpg"
+      ],
+      "overcast": [
+        "pexels-joonas-kääriäinen-239107.jpg",
+        "wallpaperflare.com_wallpaper.jpg"
+      ],
+      "rain": [
+        "benjamin-sow-QjR_snVQn4c-unsplash.jpg",
+        "eric-zhu-aJOslo_ZuWM-unsplash.jpg",
+        "pexels-alexander-isreb-14353673.jpg",
+        "pexels-pixabay-373481.jpg"
+      ],
+      "snow": [
+        "anastasiia-krutota-5JCofJkl2bs-unsplash.jpg",
+        "dillon-kydd-7o7m1xCEiY8-unsplash.jpg",
+        "hide-obara-Qh6wsKk1HWg-unsplash.jpg",
+        "jessica-fadel-SH4GNXNj1RA-unsplash.jpg",
+        "josh-hild-_TuI8tZHlk4-unsplash.jpg",
+        "kajetan-sumila-DFe_-n84gV8-unsplash.jpg",
+        "luke-hodde-OPZLe7zcCKE-unsplash.jpg",
+        "pexels-pixabay-358235.jpg"
+      ],
+      "thunder": [
+        "pexels-adrian-frentescu-10466824.jpg",
+        "pexels-amol-mande-2684011.jpg",
+        "pexels-andre-furtado-1162251.jpg",
+        "pexels-edwin-pérez-13447189.jpg",
+        "pexels-greg-2418664.jpg",
+        "pexels-isabella-mendes-19724045.jpg",
+        "pexels-johannes-plenio-1118869.jpg",
+        "pexels-lachlan-ross-6510344.jpg",
+        "pexels-pixabay-371838.jpg",
+        "pexels-rodrigo-souza-2531709.jpg",
+        "pexels-srv-3657143.jpg",
+        "pexels-кирилл-loveloonies-1643793.jpg",
+        "pexels-сергей-леденёв-8956453.jpg"
+      ]
+    }
+  }

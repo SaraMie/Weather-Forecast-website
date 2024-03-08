@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What weather Today ?</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- styles file-->
+    <link rel="stylesheet" href="style/root.css">
+    <link rel="stylesheet" href="style/index.css">
+    
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-sm navbar-expand-md navbar-expand-lg mb-5 py-1">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand d-flex flex-column p-0"><span>What weather</span><span><img src="style/assets/img/day/icons8-sun-48.png" alt="">today ?</span></a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div class="input-group search-bar">
+                        <input type="search" list="suggestion-list" class="form-control glass-btn" placeholder="Search for location.." id="city-input">
+                        <datalist id="suggestion-list"></datalist>
+                        <span id="auto-detect" class="btn glass-btn input-group-text"><i class="bi bi-geo-alt"></i></span>
+                    </div> 
+                </li>
+                <li class="nav-item">
+                    <button id="search-btn" class="btn glass-btn"><i class="bi bi-search"></i></button>
+                </li>
+                <li class="nav-item ms-2 d-flex justify-content-center align-items-center">
+                    <span class="btn glass-btn" id="preferences-btn" data-bs-toggle="modal" data-bs-target="#pref-modal"><i class="bi bi-gear"></i></span>
+                </li>
+            </ul>
+            
+            
+            
+        </div>
+    </nav>
+    <div class="modal fade " tabindex="-1" id="pref-modal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content glass-container">
+            <div class="modal-header">
+              <h6 class="modal-title">Preferences</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3 d-flex justify-content-between">
+                    <h6><i class="bi bi-thermometer-half me-2"></i>Temperature</h6>
+                    <div class="d-flex gap-2 justify-content-end align-items-center me-4">
+                        <span id="celcius" class=" btn glass-btn selected" value="temp_c">C°</span> | <span id="farenheit" value="temp_f" class="btn glass-btn">F°</span>
+                    </div>
+                    
+                </div>
+                <div class="mb-3 d-flex justify-content-between ">
+                    <h6><i class="bi bi-moisture me-2"></i>Precipitation</h6>
+                    <div class="d-flex gap-2 justify-content-end align-items-center me-4">
+                        <span class=" btn glass-btn " id="in" value="precip_in">Inch</span> | <span class=" btn glass-btn selected" id="mm" value="precip_mm">Milli-meter</span>
+                        
+                    </div>
+                </div>
+                <div class="mb-3 d-flex justify-content-between ">
+                    <h6><i class="bi bi-clock me-2"></i> Clock</h6>
+                    <div class="d-flex gap-2 justify-content-end align-items-center me-4">
+                        <span class=" btn glass-btn" id="time-12" value="clock_12h">12h</span> | <span class=" btn glass-btn selected" id="time-24" value="clock_24h">24h</span>
+                        
+                        
+                    </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn glass-btn" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn glass-btn" id="apply-pref">Apply</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <main class="d-flex justify-content-center align-items-center">
+        <div class="container d-flex flex-column gap-5 justify-content-center align-items-center">
+            
+                <div class="row glass-container rounded p-2 " id="current-weather">
+                    <div class="col">
+                        <div class="row ms-3 me-1 d-flex justify-content-start glass-text" id="clock">
+                        </div>
+                        <div class="row ms-3 me-1 d-flex justify-content-start glass-text" id="city-name"></div>
+                        <div class="row ms-3 me-1 d-flex justify-content-start glass-text" id="w_descrp"></div>
+                        
+                        <div class="row mt-3 ms-1 d-flex justify-content-start align-items-center" id="w_details">
+                            <div class="col">
+                                <div class="row humidity">
+                                    <div class="col-8 glass-text">Humidity</div><div class="col val" id="humidity-val"></div>
+                                </div>
+                                <div class="row wind-speed">
+                                    <div class="col-8 glass-text">Wind-speed</div><div class="col val" id="wind-speed-val"></div>
+                                </div>
+                                <div class="row precipitation">
+                                    <div class="col-8 glass-text">Precipitation</div><div class="col val" id="precipitation-val"></div>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex flex-column gap-2">
+                                <span class="glass-btn btn d-flex justify-content-center align-items-center" id="will-it-rain"><i class="bi bi-umbrella"></i></span>
+                                <span class="glass-btn btn d-flex justify-content-center align-items-center" id="will-it-snow"><i class="bi bi-snow"></i></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="col">
+                        <div class="row" id="weather-condition">
+                            <div class="col">
+                                <div class="row d-flex ms-1">
+                                    <div class="col d-flex justify-content-start align-items-center">
+                                        <span id="temp-val"></span> <span id="day-temp"></span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row ms-1" id="feels-like">
+                                    <div class="col-4 glass-text">feels like</div>
+                                    <div class="col val" id="feels-like-val"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row glass-container rounded p-3" id="hourly-forecast">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="glass-text">Today's weather</h4>
+                            </div>
+                        </div>
+                        <div class="row py-3 d-flex justify-content-start align-items-center flex-row flex-nowrap" id="forecast-wrapper">
+                            
+                        </div>
+                    </div>
+                </div>
+           
+            
+        </div>
+    </main>
+    <footer class="container-fluid fixed-bottom d-flex justify-content-center align-items-center">
+        <div class="row d-flex justify-content-center align-items-center">
+            
+            <div class="col  d-flex justify-content-center align-items-center ">
+                <span class="d-flex justify-content-center align-items-center ">
+                    Powered by <a id="api-url" href="https://www.weatherapi.com/" title="Free Weather API"><img style="transform: scale(.4);" src='https://cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com" border="0"></a>
+                </span>
+                <span class="d-flex justify-content-center align-items-center">
+                    Find me on <a class="px-3" id="git" href="https://github.com/SaraMie"><i class="bi bi-github"></i></a>
+                </span>
+                
+            </div>
+            
+                 
+            
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript --> 
+    <script type="text/javascript" src="libraries/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
+    
+    <!-- scripts -->
+    
+    <script src="script/main.js"></script>
+    <script src="script/style.js"></script>
+</body>
+</html>
+
