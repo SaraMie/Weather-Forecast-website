@@ -2,6 +2,9 @@
 <div>
   This project is a simple weather forecast site built using vanilla JavaScript and Bootstrap. It utilizes the "Free Weather API" to retrieve weather data for various locations. Users can check the weather forecast for the current day, view hourly forecasts, and search for weather information for specific cities.
 </div>
+<h3>Screenshot</h3>
+<img src="style/assets/img/Screenshot 2024-03-10 135910.png">
+<img src="style/assets/img/Screenshot 2024-03-10 140320.png">
 <h3>Installation</h3>
 <ul>
   <li>Clone this repository to your local machine</li>
